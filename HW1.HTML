@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Color Changer</title>
+    <style>
+        .d1  { 
+            width: 20px;
+            height: 20px;
+            border: solid;
+            border-color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1" id="d1"></div>
+
+    
+        
+      
+    
+
+    <script>
+        
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
+        function changeColorRandomly() {
+            d1.style.backgroundColor = getRandomColor();
+        }
+
+        setInterval(changeColorRandomly, 1000);
+
+
+        
+    
+        let rt = 100
+        let ht = 100
+        let delta_ht =10
+        let delta_rt =10
+
+
+        function moveRight() {
+            if (rt > window.innerWidth-25 || rt <0 ) {
+                delta_rt = -delta_rt
+            }
+            rt+=delta_rt
+            d1.style.left = rt + "px"
+        }
+        function moveDown() {
+            if (ht > window.innerHeight-25 || ht <0 ) {
+                delta_ht = -delta_ht
+            }
+            ht+=delta_ht
+            d1.style.top = ht + "px"
+        }
+
+
+        setInterval(moveDown, 100)
+        setInterval(moveRight, 100)
+
+
+    </script>
+
+   
+
+</body>
+
+</html>
