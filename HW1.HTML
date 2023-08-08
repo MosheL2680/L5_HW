@@ -15,33 +15,13 @@
 </head>
 
 <body>
+
     <div class="d1" id="d1"></div>
 
-    
-        
-      
-    
+
 
     <script>
-        
-        function getRandomColor() {
-            const letters = "0123456789ABCDEF";
-            let color = "#";
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-
-        function changeColorRandomly() {
-            d1.style.backgroundColor = getRandomColor();
-        }
-
-        setInterval(changeColorRandomly, 1000);
-
-
-        
+         
     
         let rt = 100
         let ht = 100
@@ -65,8 +45,26 @@
         }
 
 
+  
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
+        function changeColorRandomly() {
+            d1.style.backgroundColor = getRandomColor();
+        }
+
+
         setInterval(moveDown, 100)
         setInterval(moveRight, 100)
+        setInterval(changeColorRandomly, 1000);
+
 
 
     </script>
